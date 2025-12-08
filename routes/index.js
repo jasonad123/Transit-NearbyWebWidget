@@ -1,10 +1,6 @@
-'use strict';
+import express from 'express';
+import axios from 'axios';
 
-const express = require('express');
-const axios = require('axios');
-const tmp = require('tmp-promise');
-const fs = require('fs');
-const im = require('imagemagick');
 const router = express.Router();
 
 router.get('/api/nearby', async function (req, res, next) {
@@ -55,16 +51,12 @@ router.get('/images/:name.svg', function (req, res) {
 
 
 router.get('/', function(req, res) {
-    res.render('widget');
+  res.sendFile('index.html', { root: './public' });
 });
 
-module.exports = router;
+// Legacy route for backwards compatibility
+router.get('/legacy', function(req, res) {
+  res.render('widget');
+});
 
-
-function getRGB(color) {
-  const r = parseInt(color.substr(0, 2), 16);
-  const g = parseInt(color.substr(2, 2), 16);
-  const b = parseInt(color.substr(4, 2), 16);
-
-  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
-}
+export default router;

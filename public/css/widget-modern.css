@@ -1,0 +1,82 @@
+/* Base styles from original widget.css adapted for Lit components */
+* {
+  -webkit-font-smoothing: antialiased;
+  font-smooth: antialiased;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+transit-widget {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Search box styles */
+search-box {
+  display: block;
+  margin: 8px 0;
+}
+
+/* Route list container */
+route-list {
+  display: block;
+  height: calc(100% - 50px - 48px);
+  border: 0.42em solid #e3e3e3;
+  border-radius: 0.42em;
+  margin: 0;
+  background-color: #bfbfbf;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+/* Location button */
+location-button {
+  display: block;
+}
+
+/* Footer */
+#power_by {
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  margin: 10px 0;
+  color: #9a9a9a;
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+
+#power_by a {
+  color: #a6a6a6;
+  text-decoration: underline;
+}
+
+#power_by a:hover {
+  color: #777777;
+}
+
+#transit-logo {
+  background: url('/img/powered.png') no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  margin: 0 0 -3px 2px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #transit-logo {
+    background-image: url('/img/powered@2x.png');
+  }
+}
