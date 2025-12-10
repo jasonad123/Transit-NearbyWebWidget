@@ -17,6 +17,14 @@ body {
   overflow: hidden;
 }
 
+#widget {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 h1, h2, h3 {
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
@@ -216,6 +224,11 @@ i.inactive {
   border-radius: 2px;
 }
 
+form[role="search"] {
+  margin: 0;
+  padding: 0;
+}
+
 #search {
   height: 30px;
   margin: 8px 0;
@@ -279,7 +292,9 @@ i.inactive {
 }
 
 #routes {
-  height: calc(100% - 50px - 48px);
+  display: block;
+  flex: 1;
+  min-height: 0;
 
   border: 0.42em solid #e3e3e3;
   border-radius: 0.42em;
@@ -296,11 +311,15 @@ i.inactive {
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: lighter;
   text-align: center;
-  margin: 10px 0;
+  margin: 0;
+  padding: 8px 0;
 
   color: #9a9a9a;
   font-size: 1.1em;
   line-height: 1.3em;
+  position: relative;
+  z-index: 2;
+  background-color: white;
 }
 
 #power_by a {
@@ -474,19 +493,16 @@ i.inactive {
 
 #loading,
 .autocomplete {
-  height: calc(100% - 50px - 48px - 0.84em);
+  height: calc(100% - 46px - 40px - 0.84em);
 
   position: absolute;
-  top: calc(48px + 0.42em);
+  top: calc(46px + 0.42em);
   left: 0.42em;
   right: 0.42em;
 
   background: rgba(0, 0, 0, 0.8);
   color: #ffffff;
   border: none;
-}
-
-#loading {
   text-align: center;
 }
 

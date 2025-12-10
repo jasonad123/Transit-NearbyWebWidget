@@ -16,12 +16,19 @@ body {
 }
 
 transit-widget {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 /* Search box styles */
+form[role="search"] {
+  margin: 0;
+  padding: 0;
+}
+
 search-box {
   display: block;
   margin: 8px 0;
@@ -30,7 +37,8 @@ search-box {
 /* Route list container */
 route-list {
   display: block;
-  height: calc(100% - 50px - 48px);
+  flex: 1;
+  min-height: 0;
   border: 0.42em solid #e3e3e3;
   border-radius: 0.42em;
   margin: 0;
@@ -51,10 +59,14 @@ location-button {
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-weight: lighter;
   text-align: center;
-  margin: 10px 0;
+  margin: 0;
+  padding: 8px 0;
   color: #9a9a9a;
   font-size: 1.1em;
   line-height: 1.3em;
+  position: relative;
+  z-index: 2;
+  background-color: white;
 }
 
 #power_by a {
