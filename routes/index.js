@@ -54,9 +54,4 @@ router.get('/', function(req, res) {
   res.sendFile('index.html', { root: './public' });
 });
 
-// Legacy route for backwards compatibility
-router.get('/legacy', function(req, res) {
-  res.render('widget');
-});
-
 export default router;

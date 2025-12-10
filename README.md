@@ -17,7 +17,7 @@ A modern web widget showing real-time transit departures using the Transit API. 
 - Fully accessible (ARIA labels, roles)
 - Embeddable with hash parameters
 - Modern Lit web components
-- **24 KB gzipped** (79% smaller than legacy version)
+- **24 KB gzipped** (79% smaller than previous version)
 
 ## Quick Start
 
@@ -95,8 +95,6 @@ This project uses a **hybrid modernization strategy** (similar to Transit-TV):
 - Preserves compact, information-dense design
 - Modern component architecture with classic visual style
 
-See [HYBRID-APPROACH.md](./HYBRID-APPROACH.md) for details.
-
 ## Embedding
 
 Use hash parameters to configure the widget:
@@ -136,7 +134,7 @@ src/
 
 public/
 ├── index.html                # Main page
-└── css/                      # Legacy styles (for /legacy route)
+└── css/                      # CSS styles
 
 dist/
 └── transit-widget.js         # Built widget (generated)
@@ -144,20 +142,20 @@ dist/
 
 ## Migration Notes
 
-This project was recently modernized from jQuery + Jade + Grunt to Lit + TypeScript + Vite.
+This project has been fully modernized to use Lit + TypeScript + Vite.
 
-See [MIGRATION.md](./MIGRATION.md) for detailed migration information.
+### Legacy System Removal:
+- ✅ All legacy jQuery code removed
+- ✅ All Jade templates removed
+- ✅ Grunt build system removed
+- ✅ Legacy routes removed
+- ✅ Unused dependencies removed
 
-### What was removed:
-- jQuery (95 KB)
-- Jade templates
-- doT.js
-- Grunt build system
-- Unused dependencies (imagemagick, tmp-promise, body-parser)
-
-### What was added:
-- Lit web components
-- TypeScript
+### Modern Stack:
+- Lit web components (Light DOM)
+- TypeScript for type safety
+- Vite for modern bundling
+- ES Modules
 - Vite build system
 - Modern ES modules
 - Better performance (5x faster load time)
@@ -176,18 +174,6 @@ The Express server proxies these routes to the Transit API:
 - Safari 14+
 - Edge 88+
 
-## Deploy
-
-The widget can be deployed to any static hosting service that supports:
-- Serving static files from `dist/`
-- Environment variables for API key
-- Node.js for the Express proxy (optional if you handle API calls client-side)
-
-Example platforms:
-- Vercel
-- Netlify
-- Railway
-- Cloudflare Pages
 
 ## Contribute
 
